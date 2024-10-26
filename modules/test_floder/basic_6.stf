@@ -1,0 +1,24 @@
+# p4testgen seed: none
+# Date generated: 2023-12-01-08:51:55.035
+# Current node coverage: nan
+# Traces
+# [Parser] MyParser
+# [State] start
+# [ExtractSuccess] hdr.ethernet@0 | Condition: |*packetLen_bits(bit<32>)| >= 112; | Extract Size: 112 -> hdr.ethernet.dstAddr = 0x0000_0000_0000 | hdr.ethernet.srcAddr = 0x0000_0000_0000 | hdr.ethernet.etherType = 0x0000
+# [State] accept
+# [Control MyVerifyChecksum start]
+# [Control MyIngress start]
+# [Internal If Statement]: 0; -> 0; -> false
+# [Internal If Statement]: 0 != 0; -> 0 != 0; -> false
+# [Control MyEgress start]
+# [Control MyComputeChecksum start]
+# [Control MyDeparser start]
+# [Emit] hdr.ethernet -> hdr.ethernet.dstAddr = 0x0000_0000_0000 | hdr.ethernet.srcAddr = 0x0000_0000_0000 | hdr.ethernet.etherType = 0x0000
+# [Invalid emit: hdr.ipv4]
+# [Prepending the emit buffer to the program packet]
+# [Internal If Statement]: 511 == 0; -> 511 == 0; -> false
+
+
+packet 0 00000000000000000000000000000000000000
+expect 0 00000000000000000000000000000000000000$
+

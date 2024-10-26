@@ -1,0 +1,55 @@
+[04:42:17.260] [bmv2] [D] [thread 5351] Set default default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[04:42:17.260] [bmv2] [D] [thread 5351] Adding interface pcap0 as port 0
+[04:42:17.260] [bmv2] [I] [thread 5351] Starting Thrift server on port 9159
+[04:42:17.260] [bmv2] [I] [thread 5351] Thrift server was started
+[04:42:17.260] [bmv2] [D] [thread 5355] Pcap reader: starting PcapFilesReader 1
+[04:42:17.398] [bmv2] [T] [thread 5365] bm_get_config
+[04:42:17.399] [bmv2] [T] [thread 5365] bm_table_add_entry
+[04:42:17.399] [bmv2] [D] [thread 5365] Entry 0 added to table 'MyIngress.ipv4_lpm'
+[04:42:17.399] [bmv2] [D] [thread 5365] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0fffffff/32
+Action entry: MyIngress.ipv4_forward - 0,0,
+
+[04:42:18.374] [bmv2] [D] [thread 5355] Pcap reader: first packet time 1701664938:374398
+[04:42:18.374] [bmv2] [D] [thread 5355] Pcap reader: first packet to send 1701664938:374398
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Processing packet received on port 0
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser 'parser': start
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Extracting header 'ethernet'
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser state 'start': key is 0800
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] Bytes parsed: 14
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Extracting header 'ipv4'
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] Bytes parsed: 34
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Parser 'parser': end
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Pipeline 'ingress': start
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] /home/vagrant/gauntlet/modules/basic.p4(114) Condition "hdr.ipv4.isValid()" (node_2) is true
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] Applying table 'MyIngress.ipv4_lpm'
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0fffffff
+
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Table 'MyIngress.ipv4_lpm': hit with handle 0
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0fffffff/32
+Action entry: MyIngress.ipv4_forward - 0,0,
+
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Action entry is MyIngress.ipv4_forward - 0,0,
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] Action MyIngress.ipv4_forward
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] /home/vagrant/gauntlet/modules/basic.p4(94) Primitive standard_metadata.egress_spec = port
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] /home/vagrant/gauntlet/modules/basic.p4(95) Primitive hdr.ethernet.srcAddr = hdr.ethernet.dstAddr
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] /home/vagrant/gauntlet/modules/basic.p4(96) Primitive hdr.ethernet.dstAddr = dstAddr
+[04:42:18.374] [bmv2] [T] [thread 5356] [0.0] [cxt 0] /home/vagrant/gauntlet/modules/basic.p4(97) Primitive hdr.ipv4.ttl = hdr.ipv4.ttl - 1
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Pipeline 'ingress': end
+[04:42:18.374] [bmv2] [D] [thread 5356] [0.0] [cxt 0] Egress port is 0
+[04:42:18.374] [bmv2] [D] [thread 5355] Pcap reader: end of all input files
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Pipeline 'egress': start
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Pipeline 'egress': end
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Deparser 'deparser': start
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Updating checksum 'cksum'
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Deparsing header 'ethernet'
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Deparsing header 'ipv4'
+[04:42:18.375] [bmv2] [D] [thread 5357] [0.0] [cxt 0] Deparser 'deparser': end
+[04:42:18.375] [bmv2] [D] [thread 5361] [0.0] [cxt 0] Transmitting packet of size 147 out of port 0

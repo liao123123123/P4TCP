@@ -1,0 +1,17 @@
+[submodule "p4c"]
+    url = https://github.com/p4lang/p4c
+    path = modules/p4c
+    ignore = dirty
+
+[submodule "behavioral-model"]
+    url = https://github.com/p4lang/behavioral-model
+    path = modules/behavioral-model
+    ignore = dirty
+
+[submodule "bludgeon"]
+    url = https://github.com/p4gauntlet/bludgeon
+    path = modules/bludgeon
+
+[submodule "toz3"]
+    url = https://github.com/p4gauntlet/toz3
+    path = modules/toz3

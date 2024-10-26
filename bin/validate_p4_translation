@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import subprocess
+import sys
+
+FILE_DIR = Path.resolve(Path(__file__)).parent
+
+args = sys.argv[1:]
+cmd = [str(FILE_DIR.joinpath("../modules/p4c/build/p4validate"))] + args
+sys.exit(subprocess.call(cmd))
