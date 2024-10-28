@@ -7,3 +7,9 @@ All tools require `p4c` to be installed. The fuzz tester and P4-to-Z3 converter 
 # Usage
 
 `python test.py`
+
+
+# Bug Finding
+`https://github.com/p4lang/p4c/issues/4548`
+`https://github.com/p4lang/p4c/issues/4596`
+`https://github.com/p4lang/p4c/issues/4579`
